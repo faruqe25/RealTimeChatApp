@@ -1,0 +1,65 @@
+﻿@model List<SignalRNotificationSystem.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table table-bordered" >
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+               Product Name
+            </th>
+            <th>
+               Price
+            </th>
+            <th>
+               Availability 
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        @if (Model != null)
+        {
+          @foreach (var item in Model)
+          {
+        <tr>
+            <td>
+                @item.ProductId
+            </td>
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @if (item.AvaiableStatus)
+                {
+                    <span class="badge badge-pill badge-success">Available</span>
+                }
+                else
+                {
+                    <span class="badge badge-pill badge-warning">Out of stock</span>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+               
+                @Html.ActionLink("Delete", "Delete", new {  id= item.ProductId })
+            </td>
+        </tr>
+          }}
+    </tbody>
+</table>

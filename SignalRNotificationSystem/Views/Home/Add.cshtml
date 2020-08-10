@@ -1,0 +1,84 @@
+﻿@model SignalRNotificationSystem.Models.Product
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+<h4>Product</h4>
+<hr />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add" data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-complete="TaskDone"
+              data-ajax-begin="ClearInputME">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AvaiableStatus" /> @Html.DisplayNameFor(model => model.AvaiableStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @*<script src="~/signalR/browser/signalr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>*@
+    <script src="~/AJAX/jquery-unobtrusive-ajax.min.js"></script> @*Data Send without Load*@
+    <script>
+        $(document).ready(function () {
+
+            $('form').bind("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+        function ClearInputME() {
+            $('form')[0].reset();
+            toastr.success('Your Request is processing', 'Wait !!!',
+                {
+                    timeOut: 1200,
+                    positionClass: "toast-bottom-left",
+                    progressBar: true,
+                })
+          
+        }
+
+        function TaskDone() {
+            toastr.success('Data has been Saved Successfully', 'Congratulation !!!',
+                {
+                    timeOut: 2500,
+                    positionClass: "toast-bottom-left",
+                    progressBar: true,
+                })
+
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+}

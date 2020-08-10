@@ -1,0 +1,66 @@
+﻿@model SignalRNotificationSystem.Models.User
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Join Public Chat </title>
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+   
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+</head>
+
+<body>
+    <div id="login-page">
+        <div class="container">
+            <form class="form-login" asp-action="Register" method="post">
+                <h2 class="form-login-heading" style="background-color:#6ab04c">Join As </h2>
+                <div class="login-wrap">
+                    <input type="text" class="form-control" placeholder="User Name" autofocus asp-for="UserName">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <br>
+                    <button style="background-color:#6ab04c" class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i>Join me in public chat</button>
+                    <hr>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="~/signalR/browser/signalr.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        "use strict";
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/signalRServerHub").build();
+        
+        connection.start().then(function () {
+            console.log("Conneted");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+        connection.on("refreshNewClient", function () {
+            console.log("New Client come");
+        });
+    </script>
+
+</body>
+
+</html>
+

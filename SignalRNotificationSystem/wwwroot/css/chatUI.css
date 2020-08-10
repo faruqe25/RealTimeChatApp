@@ -1,0 +1,248 @@
+body {
+    background: url('/images/Network.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+@media screen and (max-width:500px) {
+    .containerr {
+        width: 100vw !important;
+    }
+}
+
+@media screen and (min-width:420px) {
+    .bottom-icons .fa {
+        padding: 4px;
+    }
+
+    .input-group {
+        width: 53% !important;
+    }
+}
+@media screen and (max-width:419px) {
+    .bottom-icons .fa {
+        padding: 1.5px;
+    }
+
+    .input-group {
+        width: 48% !important;
+    }
+}
+@media screen and (max-width:350px) {
+    .bottom-icons .fa {
+        padding: 0.5px;
+    }
+
+}
+
+    @media screen and (min-width:501px) {
+        .containerr {
+            width: 500px !important;
+        }
+    }
+
+
+
+
+    .containerr {
+        margin: auto;
+        margin-top: 10px;
+        font-family: sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    /*.container{
+	width: 500px !important;
+	margin: auto;
+	margin-top: 10px;
+	font-family: sans-serif;
+	letter-spacing: 0.5px;
+}*/
+    img {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+
+    .msg-header {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 10%;
+        border-bottom: none;
+        display: inline-block;
+        background-color: #007bff;
+    }
+
+    .msg-header-img {
+        border-radius: 50%;
+        width: 40px;
+        margin-left: 5%;
+        margin-top: 12px;
+        float: left;
+    }
+
+    .active {
+        width: 120px;
+        float: left;
+        margin-top: 10px;
+    }
+
+        .active h4 {
+            font-size: 20px;
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        .active h6 {
+            font-size: 10px;
+            margin-left: 10px;
+            line-height: 2px;
+            color: #fff;
+        }
+
+    .header-icons {
+        width: 120px;
+        float: right;
+        margin-top: 12px;
+        margin-right: 10px;
+    }
+
+        .header-icons .fa {
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+    .chat-page {
+        padding: 0 0 0 0;
+        background-color: #fff;
+    }
+
+    .msg-inbox {
+        border: 1px solid #ccc;
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
+
+    .chats {
+        padding: 30px 15px 0 25px;
+    }
+
+    .msg-page {
+        height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+
+    .recieved-chats-img {
+        display: inline-block;
+        width: 20px;
+        float: left;
+    }
+
+    .recieved-msg {
+        display: inline-block;
+        padding: 0 0 0 10px;
+        vertical-align: top;
+        width: 92%;
+    }
+
+    .recieved-msg-inbox {
+        width: 57%;
+    }
+
+        .recieved-msg-inbox p {
+            background: #efefef none repeat scroll 0 0;
+            border-radius: 10px;
+            color: #646464;
+            font-size: 14px;
+            margin: 0;
+            padding: 5px 10px 5px 12px;
+            width: 100%
+        }
+
+    .time {
+        color: #777;
+        display: block;
+        font-size: 10px;
+        margin: 3px 0px 8px;
+    }
+
+    .outgoing-chats {
+        overflow: hidden;
+        margin: 26px 20px;
+    }
+
+    .outgoing-chats-msg {
+        float: left;
+        /*width: 46%;
+	margin-left: 45% ;*/
+        width: 52%;
+        margin-left: 39%;
+    }
+
+        .outgoing-chats-msg p {
+            background: #007bff none repeat scroll 0 0;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 14px;
+            margin: 0;
+            color: #fff;
+            padding: 5px 10px 5px 12px;
+            width: 100%
+        }
+
+    .outgoing-chats-img {
+        display: inline-block;
+        width: 20px;
+        float: right;
+    }
+
+    .msg-bottom {
+        position: relative;
+        height: 60px;
+        background-color: #007bff;
+    }
+
+    .input-group {
+        float: right;
+        margin-top: 13px;
+        margin-right: 20px;
+        outline: none !important;
+        border-radius: 20px;
+       /* width: 54% !important;*/
+        background-color: #fff;
+    }
+
+    .form-control {
+        border: none !important;
+        border-radius: 20px !important;
+    }
+
+    .input-group-text {
+        background: transparent !important;
+        border: none !important
+    }
+
+    .input-group .fa {
+        color: #007bff;
+        float: right;
+    }
+
+    .bottom-icons {
+        float: left;
+        margin-top: 17px;
+        width: 35% !important;
+        margin-left: 22px;
+    }
+
+        .bottom-icons .fa {
+            color: #fff;
+           /* padding: 5px;*/
+        }
+
+    input[type=text] {
+        border-radius: 20px !important;
+    }
+
+    .form-control :focus {
+        box-shadow: none !important;
+        border-color: #fff;
+    }
