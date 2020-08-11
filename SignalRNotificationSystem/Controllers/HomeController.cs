@@ -77,9 +77,9 @@ namespace SignalRNotificationSystem.Controllers
         }
         public IActionResult Chat() 
         {
-           
-            if(HttpContext.Session.GetString("UserName")==null)
-            { 
+
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
                 return RedirectToAction("JoinPublicChat");
             }
             return View(context.Messages.ToList());
@@ -93,12 +93,20 @@ namespace SignalRNotificationSystem.Controllers
         [HttpPost]
         public  JsonResult Chat(Message cht) 
         {
-            cht.UserName = HttpContext.Session.GetString("UserName");
+           cht.UserName = HttpContext.Session.GetString("UserName");
+            
             context.Messages.Add(cht);
-            context.SaveChanges();
+           int a= context.SaveChanges();
            
-
-            return Json("Ok");
+            if(a>0)
+            {
+                return Json("Ok");
+            }
+            else
+            {
+                return Json(false);
+            }
+           
         }
         public JsonResult ValidateUserName(string UserName)
         {

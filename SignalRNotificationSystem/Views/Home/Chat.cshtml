@@ -5,86 +5,145 @@
     var userName = Context.Session.GetString("UserName");
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<div class="containerr ">
+    <div class="msg-header">
+        <div class="msg-header-img">
+            <img src="~/images/user2.jpg" asp-append-version="true">
 
-<div style="height:60vh;">
-    <div class="jumbotron">
-        <h2 class="text-center text-primary" style="padding-top:0px">
-            <i class="fas fa-facebook-messenger"></i>&nbsp; Anonymous Public Talk(<span id="TotalUserCounter"></span>)
-        </h2>
+        </div>
+        <div class="active">
+            <h4>Group Chat</h4>
+            <h6> Active Now</h6>
+        </div>
+        <div class="header-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-video-camera"></i>
+            <i class="fa fa-info-circle"></i>
+        </div>
+    </div>
+    <div class="chat-page">
+        <div class="msg-inbox">
+            <div class="chats">
+                <div class="msg-page" id="chat">
 
-        <div class="row">
-            <div class="col-md-12 " id="chat" style="height:42vh">
-                @if (Model != null)
-                {
-                    @foreach (var message in Model.OrderBy(m => m.When))
+
+                    @if (Model != null)
                     {
-                        string containerClass, timePosition, textAlign, contcolor, offset;
-                        if (userName == message.UserName)
+                        @foreach (var message in Model.OrderBy(m => m.When))
                         {
-                            containerClass = "container darker";
-                            timePosition = "time-right text-light";
-                            textAlign = "text-right text-white";
-                            contcolor = "bg-primary";
-                            offset = "col-md-6 offset-md-6";
+                            var time = "";
+                            var firstclass = "";
+                            var secondclass = "";
+                            var thirdclass = "";
+                            var image = "";
+
+                            var user = "";
+                            var text = "";
+                            if (userName == message.UserName)
+                            {
+                                firstclass = "outgoing-chats";
+                                secondclass = "outgoing-chats-img";
+                                image = "~/images/user2.jpg";
+                                thirdclass = "outgoing-chats-msg";
+                                time = message.When.ToLongTimeString();
+                                text = message.Text;
+
+
+                            }
+                            else
+                            {
+                                firstclass = "recieved-chats";
+                                secondclass = "recieved-chats-img";
+                                image = "~/images/user1.jpg";
+                                thirdclass = "recieved-msg-inbox";
+                                user = message.UserName;
+                                time = message.When.ToLongTimeString();
+                                text = message.Text;
+
+                            }
+
+
+                    <div class=@firstclass>
+                        <div class=@secondclass>
+                            <img src=@image asp-append-version="true">
+                        </div>
+
+                        @if (user == "")
+                        {
+                            <div class="@thirdclass">
+                                <p>
+                                    @text
+                                </p>
+                                <span class="time">
+                                    @time
+                                </span>
+
+                            </div>
                         }
                         else
                         {
-                            containerClass = "container";
-                            timePosition = "text-left";
-                            textAlign = "text-left";
-                            contcolor = "bg-light";
-                            offset = "col-md-6";
+                            <div class="@thirdclass">
+                                <p>
+                                    @text
+                                </p>
+                                <span class="time">
+                                    @time ( @user )
+                                </span>
+
+                            </div>
                         }
 
-                        <div class="row" id="content">
-                            <div class="@offset" style="margin-top:3px">
-                                <div class="@containerClass @contcolor" style="border-radius:20px;border:dotted .5px green">
 
-                                    <p class="sender @textAlign">@message.UserName Said ( <span class="@timePosition">@message.When.ToLongTimeString()</span>) :</p>
-                                    <p class="@textAlign">@message.Text</p>
-                                    <span id="a"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                    }
-                }
-
-            </div>
-            <div class="row" id="AppendMe">
-            </div>
-            <div class="col-md-12" style="margin-top:25px">
-                <form asp-action="Chat" class="form-inline" data-ajax="true"
-                      data-ajax-complete="TaskDone"
-                      data-ajax-begin="ClearInputME"
-                      data-ajax-method="POST">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form form-inline col">
-                        <input name="Text" class="form-control form-inline col-10 col-md-10 col-sm-10 col-xl-11" id="messageText" />
-                        <input type="submit" value="Send" id="submitButton" class="btn btn-success" autofocus required />
                     </div>
-
-                    <input type="hidden" value="@userName" name="username" id="UserName" />
+                        }
+                    }
+                </div> 
+                <form asp-action="Chat" asp-controller="Home" data-ajax="true"
+                      
+                      data-ajax-method="POST">
+                    <div class="msg-bottom">
+                        <div class="bottom-icons">
+                            <i class="fa fa-phone"></i>
+                            <i class="fa fa-plus-circle"></i>
+                            <i class="fa fa-camera"></i>
+                            <i class="fa fa-microphone"></i>
+                            <i class="fa fa-smile-o"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Write your message" id="SendMessageText" name="text">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-paper-plane" id="SendMessageButton"></i>
+                                </span>
+                            </div>
+                            <input type="hidden" value="@userName" name="username" id="UserName" />
+                        </div>
+                    </div>
                 </form>
-                @*}*@
+
+
+
+
+
             </div>
-        </div>
+
+
+
 
     </div>
+
+
+
 </div>
-
-
-
-
-
+</div>
 @section scripts {
 
     <script src="~/AJAX/jquery-unobtrusive-ajax.min.js"></script>
     <script src="~/NiceScroll/NiceScroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         function ClearInputME() {
-            $('form')[0].reset();
+            //$('form')[0].reset();
             toastr.success('Your Request is processing', 'Wait !!!',
                 {
                     timeOut: 1200,
@@ -104,7 +163,7 @@
 
         };
         $('form').submit(function () {
-            if ($.trim($("#messageText").val()) === "") {
+            if ($.trim($("#SendMessageText").val()) === "") {
                 toastr.error('Write Something', 'Ops! !!!',
                     {
                         timeOut: 2500,
@@ -116,7 +175,7 @@
         });
 
 
-    </script>
+    </script>*@
     @*<script src="~/signalR/browser/signalr.min.js"></script>*@
     <script type="text/javascript">
         $("#chat").niceScroll(); // Nice Scroll Design
@@ -143,9 +202,9 @@
 
         var connection = new signalR.HubConnectionBuilder().withUrl("/signalRServerHub").build();
         // Disable send button until connection is established
-        document.getElementById("submitButton").disabled = true;
+        //document.getElementById("submitButton").disabled = true;
         connection.start().then(function () {
-            document.getElementById("submitButton").disabled = false;
+            console.log("Connected");
         }).catch(function (err) {
             return console.error(err.toString());
         });
@@ -159,54 +218,104 @@
         connection.on("refreshNewClient", function () {
             console.log("New Client come");
         });
-        connection.on("ReceiveMessage", function (user, message) {
+    </script>
 
+
+
+    <script>
+
+        connection.on("ReceiveMessage", function (user, message) {
             var CurrentUser = $("#UserName").val();
+            var dt = new Date();
+            var hours = dt.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = dt.getMinutes();
+            var finalTime = hours + ":" + minutes + ":" + dt.getSeconds() + " " + AmOrPm;
+
+            
+            var firstclass = "";
+            var secondclass = "";
+            var thirdclass = "";
+            var image = "";
+            
+            var User = "";
+            var text = "";
             if (CurrentUser === user) {
-                containerClass = "container darker ";
-                timePosition = "time-right text-light";
-                textAlign = "text-right text-white";
-                contcolor = "bg-primary";
-                offset = "col-md-6 offset-md-6";
+
+                firstclass = "outgoing-chats";
+                secondclass = "outgoing-chats-img";
+                image = "/images/user2.jpg";
+                thirdclass = "outgoing-chats-msg";
             }
             else {
-                containerClass = "container";
-                timePosition = "text-left";
-                textAlign = "text-left";
-                contcolor = "bg-light";
-                offset = "col-md-6";
-                CurrentUser = user;
-
-            }
-            if ($.trim(message) != "") {
-                LoadNumberOfRegisatedUser();
-                var dt = new Date();
-                var hours = dt.getHours(); // gives the value in 24 hours format
-                var AmOrPm = hours >= 12 ? 'PM' : 'AM';
-                hours = (hours % 12) || 12;
-                var minutes = dt.getMinutes();
-                var finalTime = hours + ":" + minutes + ":" + dt.getSeconds() + " " + AmOrPm;
-                var item = " "
-                item = item.concat('<div class="' + offset + '" style="margin-top:3px">');
-                item = item.concat('<div class="row"><div class="' + containerClass + " " + contcolor + '" style="border-radius:20px;border:dotted .5px green">');
-                item = item.concat('<p class="sender ' + textAlign + '">' + CurrentUser + ' Said ( <span class="' + timePosition + '">' + finalTime + '</span>) :</p>');
-                item = item.concat('<p class="' + textAlign + '">' + message + '</p> </div></div></div>');
-                $("#chat").append(item);
-                $("#chat").niceScroll(); // Nice Scroll Design
-                $('#chat').scrollTop(1000000) //Set Scroll Bottom
+                firstclass = "recieved-chats";
+                secondclass = "recieved-chats-img";
+                image = "/images/user1.jpg";
+                thirdclass = "recieved-msg-inbox";
+                User = user;
             }
 
+            var item = " ";
+            item = item.concat('<div class="' + firstclass+'">');
+            item = item.concat('<div class="' + secondclass + '"><img src ="' + image + '" asp-append-version="true" ></div>');
+
+            if (User === "") {
+                item = item.concat('<div class="' + thirdclass + '"><p>' + message + '</p><span class="time">' + finalTime + '</span></div></div>');
+
+            }
+            else {
+                item = item.concat('<div class="' + thirdclass + '"><p>' + message + '</p><span class="time">' + finalTime + '( '+ User+')</span></div></div>');
+
+            }
+
+            
+            $("#chat").append(item);
+            $('#chat').scrollTop(1000000);
         });
-        $("#submitButton").click(function () {
-            var Text = $("#messageText").val();
+
+        $('form').keyup(function (e) {
+            if (e.which === 13) {
+                var Text = $("#SendMessageText").val();
+                var User = $("#UserName").val(); 
+                if ($.trim(Text) != "") {
+                    $('form').submit();
+                    connection.invoke("SendMessage", User, Text).catch(function (err) {
+                        return console.error(err.toString());
+                    });
+                    
+                    $('form')[0].reset();
+                }
+            }
+        });
+
+        $('form').submit(function () {
+            if ($.trim($("#SendMessageText").val()) === "") {
+                return false;
+            }
+        });
+        $("#SendMessageButton").click(function () {
+            
+            var Text = $("#SendMessageText").val();
             var User = $("#UserName").val();
-            connection.invoke("SendMessage", User, Text).catch(function (err) {
-                return console.error(err.toString());
-            });
-            //event.preventDefault();
+            if ($.trim(Text) != "") {
+                connection.invoke("SendMessage", User, Text).catch(function (err) {
+                    return console.error(err.toString());
+                });
+                $('form').submit();
+                $('form')[0].reset();
+            }
+           
+            
+
+
         });
-        
+
+
+
+
     </script>
+
 
 
 

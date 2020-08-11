@@ -117,6 +117,8 @@ C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\b
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.AssemblyInfoInputs.cache
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.AssemblyInfo.cs
+C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.csproj.CoreCompileInputs.cache
+C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.RazorAssemblyInfo.cache
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.RazorAssemblyInfo.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.TagHelpers.input.cache
@@ -124,8 +126,10 @@ C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\o
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.RazorCoreGenerate.cache
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Add.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.cshtml.g.cs
+C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\ChatWithMe.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\JoinPublicChat.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -141,8 +145,4 @@ C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\o
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.dll
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.pdb
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.genruntimeconfig.cache
-C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\JoinPublicChat.cshtml.g.cs
-C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.csproj.CoreCompileInputs.cache
-C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\SignalRNotificationSystem.csprojAssemblyReference.cache
-C:\Users\Avro\source\repos\SignalRNotificationSystem\SignalRNotificationSystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\ChatWithMe.cshtml.g.cs

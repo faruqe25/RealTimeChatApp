@@ -2,11 +2,13 @@ body {
     background: url('/images/Network.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
+   
 }
 @media screen and (max-width:500px) {
     .containerr {
         width: 100vw !important;
     }
+   
 }
 
 @media screen and (min-width:420px) {
@@ -127,7 +129,7 @@ body {
     }
 
     .msg-page {
-        height: calc(100vh - 200px);
+        height: calc(100vh - 220px);
         overflow-y: auto;
     }
 
@@ -146,6 +148,7 @@ body {
 
     .recieved-msg-inbox {
         width: 57%;
+        margin-left:34px;
     }
 
         .recieved-msg-inbox p {
@@ -167,14 +170,14 @@ body {
 
     .outgoing-chats {
         overflow: hidden;
-        margin: 26px 20px;
+        /*margin: 26px 20px;*/
     }
 
     .outgoing-chats-msg {
         float: left;
         /*width: 46%;
 	margin-left: 45% ;*/
-        width: 52%;
+        width: 54%;
         margin-left: 39%;
     }
 

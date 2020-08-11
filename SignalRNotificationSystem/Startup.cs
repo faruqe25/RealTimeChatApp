@@ -79,7 +79,7 @@ namespace SignalRNotificationSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=ChatWithMe}/{id?}");
+                    pattern: "{controller=Home}/{action=Chat}/{id?}");
             });
         }
     }
