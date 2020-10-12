@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RDZmhDS9bL47xu92usdXtXh8+AraDg45vXGsuBSUNZ0wpXZouXTHjGR7rPBEUDsBwdhaIGhv0lBVPRDCRqKKYw==",
+  "dgSpecHash": "in1qEIGT+svPZCMXqrMpnvvyoMZaQMKGT/BWEghWXbwbIFFRK+ICxkQ2E4qWEtyqZ901lG5LxWE3nq5PgjK62A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Avro\\source\\repos\\SignalRNotificationSystem\\SignalRNotificationSystem\\SignalRNotificationSystem.csproj",
   "expectedPackageFiles": [
@@ -156,9 +156,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Avro\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512",
-    "C:\\Users\\Avro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.2\\microsoft.netcore.app.host.win-x64.3.1.2.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

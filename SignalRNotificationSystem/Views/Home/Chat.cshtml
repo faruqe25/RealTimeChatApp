@@ -279,7 +279,11 @@
                 var Text = $("#SendMessageText").val();
                 var User = $("#UserName").val(); 
                 if ($.trim(Text) != "") {
-                    $('form').submit();
+                    $('form').submit(function () {
+                        if ($.trim($("#SendMessageText").val()) === "") {
+                            return false;
+                        }
+                    });
                     connection.invoke("SendMessage", User, Text).catch(function (err) {
                         return console.error(err.toString());
                     });
@@ -289,11 +293,11 @@
             }
         });
 
-        $('form').submit(function () {
-            if ($.trim($("#SendMessageText").val()) === "") {
-                return false;
-            }
-        });
+        //$('form').submit(function () {
+        //    if ($.trim($("#SendMessageText").val()) === "") {
+        //        return false;
+        //    }
+        //});
         $("#SendMessageButton").click(function () {
             
             var Text = $("#SendMessageText").val();

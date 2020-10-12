@@ -46,13 +46,13 @@ namespace SignalRNotificationSystem
         {
             // The code is used to generate the database on startup
 
-            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            //{
-            //    var context = serviceScope.ServiceProvider.
-            //        GetRequiredService<DatabaseContext>();
-            //    context.Database.EnsureCreated();
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.
+                    GetRequiredService<DatabaseContext>();
+                context.Database.EnsureCreated();
 
-            //}
+            }
             //////Ending of code
 
             if (env.IsDevelopment())
